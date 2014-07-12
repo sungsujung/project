@@ -9,12 +9,14 @@ public class TimeCountChecker : MonoBehaviour {
 	private LeapManager _leapManager;
 	//타이머 동작.
 	public bool begin = true;
-	
+	//NGUI UILabel 변경(시간).
+	private UILabel timeCounter;
+
 
 	// Use this for initialization
 	void Start () {
 		_leapManager = (GameObject.Find("LeapManager") as GameObject).GetComponent(typeof(LeapManager)) as LeapManager;
-
+		timeCounter = (GameObject.Find ("timer_num") as GameObject).GetComponent (typeof(UILabel))as UILabel; 
 	}
 	
 	// Update is called once per frame
@@ -27,7 +29,7 @@ public class TimeCountChecker : MonoBehaviour {
 				//시간을 감소 시킴. 
 				timeLimit -= Time.deltaTime;
 				//시간을 출력.
-//				text.text = "Time Count: " + timeLimit.ToString ();
+				timeCounter.text = (int)timeLimit + "";
 				// 시간 계속 진행. 1일때 진행 0일때 정지.
 				Time.timeScale = 1;
 			}
@@ -42,8 +44,9 @@ public class TimeCountChecker : MonoBehaviour {
 
 		} 
 		//0초가 되면 두번째로 넘어간다. 
-		if(timeLimit <=  0)
-			Application.LoadLevel("scene" + Application.loadedLevel);
+		if (timeLimit <= 0)
+			Application.LoadLevel(Application.loadedLevel+1);
+
 		
 	}
 }

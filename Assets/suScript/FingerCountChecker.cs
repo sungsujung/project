@@ -6,15 +6,14 @@ public class FingerCountChecker : MonoBehaviour
 {
 		//LeapManager
 		private LeapManager _leapManager;
-		// 텍스쳐매쉬 변수.
-		private TextMesh text;
+
 		// 왼손과 오른손의 합계.
 		private int sum;
 		//왼손손가락 개수.
 		private UnityHand u_hand;
 		//오른손손가락 개수.
 		private UnityHand r_hand;
-
+		//몇번째 문제인지 체크.
 		private UILabel sn_text;
 
 		
@@ -24,7 +23,6 @@ public class FingerCountChecker : MonoBehaviour
 		void Start ()
 		{
 				//텍스쳐매쉬,립매니져,왼손,오른손,초기화.
-				text = gameObject.GetComponent (typeof(TextMesh)) as TextMesh;
 				_leapManager = (GameObject.Find ("LeapManager") as GameObject).GetComponent (typeof(LeapManager)) as LeapManager;
 				u_hand = (GameObject.Find ("left") as GameObject).GetComponent (typeof(UnityHand)) as UnityHand;
 				r_hand = (GameObject.Find ("right") as GameObject).GetComponent (typeof(UnityHand)) as UnityHand;
