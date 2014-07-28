@@ -36,7 +36,8 @@ public class UnityHand : MonoBehaviour
 		handType = (HandTypeBase)Instantiate(handType, transform.position, Quaternion.identity);
 		handType.SetOwner(this);
 		handType.name = isRightHand ? "rightHand" : "leftHand";
-
+		//핸드 사이즈 줄이는것. 
+		handType.transform.localScale = new Vector3(0.3F,0.3F,0.3F);
 
 		renderer.enabled = false; // Disable visual indicator for Unityhand
 
@@ -93,6 +94,7 @@ public class UnityHand : MonoBehaviour
         fingers.name = "Fingers";
         fingers.transform.position = transform.position;
         fingers.transform.rotation = transform.rotation;
+		fingers.transform.localScale = transform.localScale;
         fingers.transform.parent = transform;
 
 
@@ -153,7 +155,7 @@ public class UnityHand : MonoBehaviour
                 transformedPosition *= settings.fingerDistanceMultiplier;
 
                 unityFingers[(FINGERS)leftVal].transform.localPosition = transformedPosition;
-                unityFingers[(FINGERS)leftVal].SetActive(true);
+				unityFingers[(FINGERS)leftVal].SetActive(true);
 
 			
 			}

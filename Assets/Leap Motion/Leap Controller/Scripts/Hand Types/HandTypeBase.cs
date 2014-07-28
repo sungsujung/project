@@ -101,6 +101,7 @@ public class HandTypeBase : MonoBehaviour
 		if (activeObj)
 		{
 			activeObj.owner = null; // Clear reference
+
 			stateController.ChangeState(activeObj.Activate(this));
 		}
 		else
