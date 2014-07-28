@@ -58,3 +58,18 @@ Temp
 *. unityproj
 * .. sln
 *. userprefs
+
+*.csprog
+ 
+syntax: glob
+ 
+
+*.orig
+
+# =============== #
+# Unity generated #
+# =============== #
+Temp/
+Obj/
+UnityGenerated/
+Library/
