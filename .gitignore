@@ -73,3 +73,26 @@ Temp/
 Obj/
 UnityGenerated/
 Library/
+
+# Store this file at the root of your local repository.
+
+.DS_Store
+
+?*.csproj 
+
+*.pidb
+
+*.sln
+
+*.suo
+
+*.sln.docstates
+
+*.unityproj
+
+*.userprefs
+
+*.DS_Store
+
+build? 
+
