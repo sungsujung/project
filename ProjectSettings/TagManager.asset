@@ -6,6 +6,7 @@ TagManager:
   - left
   - right
   - leapmanager
+  - hps
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
